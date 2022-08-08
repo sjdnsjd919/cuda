@@ -3,7 +3,7 @@ from timeit import default_timer as timer
 from numba import vectorize
 #6.78 s for 1e7
 #vectprize uses scalar n input 1 output only
-@vectorize(["float32(float32,float32)"],target='cpu')#1st is output tpe, then input, default is 1 instatce in GPU
+@vectorize(["float32(float32,float32)"],target='cuda')#1st is output tpe, then input, default is 1 instatce in GPU
 def vectorAdd(a,b):
     return a+b
 
